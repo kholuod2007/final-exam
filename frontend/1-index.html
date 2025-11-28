@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دورات أونلاين</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+body {
+    font-family: 'Cairo', sans-serif;
+    background: linear-gradient(to bottom right, #ffedf5, #ffe6f2);
+}
+.navbar { background-color: #ff69a6; }
+.navbar-brand img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
+.hero { text-align: center; padding: 70px 20px; }
+.hero h1 { color: #d63384; font-size: 38px; font-weight: 700; }
+.hero p { font-size: 20px; color: #555; margin-top: 10px; }
+.course-box { max-width: 400px; margin: 15px auto; text-align: center; }
+.course-btn {
+    width: 100%; padding: 15px; font-size: 18px; border-radius: 15px;
+    background-color: #ff69a6; color: white; border: none; transition: 0.3s;
+}
+.course-btn:hover { background-color: #d63384; }
+.price-box { display: none; font-size: 20px; margin-top: 10px;
+    padding: 10px; border-radius: 10px; background-color: #ffe1ef;
+    color: #d63384; font-weight: bold; }
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container-fluid">
+<a class="navbar-brand ms-auto" href="1-index.html">
+  <img src="logo.jpg" alt="شعار الموقع">
+</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav me-auto">
+    <li class="nav-item"><a class="nav-link active" href="1-index.html">الرئيسية</a></li>
+    <li class="nav-item"><a class="nav-link" href="2-login.html">تسجيل الدخول</a></li>
+    <li class="nav-item"><a class="nav-link" href="3-about.html">من نحن</a></li>
+    <li class="nav-item"><a class="nav-link" href="4-contact.html">تواصل معنا</a></li>
+  </ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <h1>✨ دورات أونلاين ✨</h1>
+  <p>أفضل الدورات المتوفرة بطريقة سهلة، بسيطة، وبجودة عالية</p>
+</div>
+
+<!-- Courses Buttons -->
+<div class="course-box">
+    <button class="course-btn" onclick="showPrice('p1')">دورة الطبخ</button>
+    <div id="p1" class="price-box">السعر: 150 ريال</div>
+</div>
+
+<div class="course-box">
+    <button class="course-btn" onclick="showPrice('p2')">دورة المكياج</button>
+    <div id="p2" class="price-box">السعر: 200 ريال</div>
+</div>
+
+<div class="course-box">
+    <button class="course-btn" onclick="showPrice('p3')">دورة الخياطة</button>
+    <div id="p3" class="price-box">السعر: 150 ريال</div>
+</div>
+
+<div class="course-box">
+    <button class="course-btn" onclick="showPrice('p4')">دورة العناية بالأطفال</button>
+    <div id="p4" class="price-box">السعر: 150 ريال</div>
+</div>
+
+<div class="course-box">
+    <button class="course-btn" onclick="showPrice('p5')">دورة إدارة المنزل</button>
+    <div id="p5" class="price-box">السعر: 150 ريال</div>
+</div>
+
+<script>
+function showPrice(id) {
+    document.querySelectorAll('.price-box').forEach(box => box.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
