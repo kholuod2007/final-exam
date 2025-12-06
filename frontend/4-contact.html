@@ -1,103 +1,205 @@
+> ..:
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تواصل معنا - دورات أونلاين</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Cairo', sans-serif;
-            background: linear-gradient(to bottom right, #ffedf5, #ffe6f2);
-        }
-        .navbar-brand img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-        .contact-container {
-            max-width: 500px;
-            margin: 50px auto;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-        .contact-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #d63384;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تواصل معنا - دورات أونلاين</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: linear-gradient(to bottom right, #ffedf5, #ffe6f2);
+      overflow-x: hidden;
+    }
+
+    /* ========== Navbar ========== */
+    .navbar {
+      background-color: #ff69a6;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      animation: slideDown 1s ease forwards;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-100%); }
+      to { transform: translateY(0); }
+    }
+
+    .logo img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      margin: 0 10px;
+      font-size: 18px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .nav-links a:hover {
+      transform: translateY(-3px);
+      text-decoration: underline;
+    }
+
+    .nav-links a.active {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+
+    /* ========== Contact Section ========== */
+    .contact-container {
+      max-width: 500px;
+      margin: 70px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      animation: zoomIn 1.2s ease forwards;
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.8);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .contact-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #d63384;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      outline: none;
+      margin-bottom: 15px;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      border-color: #ff69a6;
+      box-shadow: 0 0 8px rgba(255, 105, 166, 0.4);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #d63384;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      animation: pulseBtn 2s infinite;
+      transition: 0.3s;
+    }
+
+    @keyframes pulseBtn {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    button:hover {
+      background-color: #b52a6f;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .nav-links a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand ms-auto" href="index.html">
-      <img src="logo.jpg" alt="شعار الموقع">
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">الرئيسية</a></li>
-        <li class="nav-item"><a class="nav-link" href="login.html">تسجيل الدخول</a></li>
-        <li class="nav-item"><a class="nav-link" href="about.html">من نحن</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">تواصل معنا</a></li>
-      </ul>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">
+      <a href="1-index.html">
+        <img src="logo.jpg" alt="شعار الموقع">
+      </a>
+    </div>
+
+    <div class="nav-links">
+      <a href="1-index.html">الرئيسية</a>
+      <a href="2-login.html">تسجيل الدخول</a>
+      <a href="3-about.html">من نحن</a>
+      <a href="4-contact.html" class="active">تواصل معنا</a>
     </div>
   </div>
-</nav>
 
-<!-- Script لتحديد الصفحة النشطة -->
-<script>
-  const links = document.querySelectorAll('.navbar .nav-link');
-  const current = location.pathname.split('/').pop();
-  links.forEach(a => {
-    if(a.getAttribute('href') === current){
-      a.classList.add('active');
-    } else {
-      a.classList.remove('active');
-    }
-  });
-</script>
-
-<!-- محتوى صفحة تواصل معنا -->
-<div class="contact-container">
+  <!-- Contact Section -->
+  <div class="contact-container">
     <h2>تواصل معنا</h2>
 
     <form onsubmit="sendMessage(event)">
-        <div class="mb-3">
-            <label class="form-label">الاسم</label>
-            <input type="text" class="form-control" placeholder="اكتب اسمك هنا" required>
-        </div>
+      <label>الاسم</label>
+      <input type="text" placeholder="اكتب اسمك هنا" required>
 
-        <div class="mb-3">
-            <label class="form-label">البريد الإلكتروني</label>
-            <input type="email" class="form-control" placeholder="اكتب بريدك الإلكتروني هنا" required>
-        </div>
+      <label>البريد الإلكتروني</label>
+      <input type="email" placeholder="اكتب بريدك الإلكتروني هنا" required>
 
-        <div class="mb-3">
-            <label class="form-label">رسالتك</label>
-            <textarea class="form-control" rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
-        </div>
+      <label>رسالتك</label>
+      <textarea rows="4" placeholder="اكتب رسالتك هنا..." required></textarea>
 
-        <button type="submit" class="btn btn-danger w-100">إرسال</button>
+
+<button type="submit">إرسال</button>
     </form>
-</div>
+  </div>
 
-<script>
-  function sendMessage(event) {
-    event.preventDefault();
-    alert(" تم إرسال رسالتك بنجاح، شكرًا لتواصلك معنا");
-    event.target.reset();
-  }
-</script>
+  <script>
+    function sendMessage(event) {
+      event.preventDefault();
+      alert("تم إرسال رسالتك بنجاح، شكرًا لتواصلك معنا ");
+      event.target.reset();
+    }
+  </script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
